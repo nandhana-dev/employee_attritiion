@@ -1,58 +1,77 @@
-# Employee Attrition Prediction
+# 📊 Employee Attrition Prediction
 
-## Project Overview
-This project delivers a machine learning solution to predict **employee attrition**. By identifying the **top 10 most influential features** that drive turnover, the model provides robust, unbiased, and probability-based predictions.
-
----
-
-## The Challenge
-The core challenge was to build a model that could accurately identify employees at risk of leaving from a highly **imbalanced dataset**, where **87% of the data showed no attrition**.
+> **Predictive HR Analytics. SMOTE. Feature Importance.**
+> A machine learning solution designed to identify high-risk attrition profiles and the key behavioral drivers behind employee turnover.
 
 ---
 
-## Methodology
-We employed a systematic, data-driven approach to build a robust predictive model.
+## 🎯 Project Overview
+The primary challenge of this project was handling a significant **class imbalance (87% non-attrition)**. By implementing **SMOTE** and a **Random Forest** architecture, the model achieves a **ROC-AUC of 0.972**, providing highly reliable probability-based predictions for HR decision-making.
 
-* **Feature Engineering:** We systematically reduced a large set of 33 initial features down to **16 key features** through rigorous data analysis. Using a Random Forest Classifier, we then precisely identified the **top 10 most impactful features** for the final model.
-* **Class Imbalance Mitigation:** To overcome data bias, we used **SMOTE (Synthetic Minority Oversampling Technique)** to balance the dataset and ensure the model could learn from both employee groups equally.
-* **Model Selection:** We evaluated several classifiers, including **Logistic Regression** and **XGBoost**. The **Random Forest Classifier** was selected for its superior performance, as evidenced by a **cross-validated ROC-AUC score of 0.972**, and its ability to capture the complex, non-linear relationships within the data.
+
 
 ---
 
-## Model Performance
-Our final model demonstrates strong predictive capabilities, particularly for identifying at-risk employees.
+## 🛠️ Methodology & Technical Strategy
 
-* **Accuracy:** 0.80
-* **Precision:** 0.26
-* **Recall:** 0.15
-* **F1-Score:** 0.19
-* **ROC-AUC Score:** 0.972 (Cross-Validated)
+* **Class Imbalance Mitigation:** Utilized **SMOTE** (Synthetic Minority Oversampling Technique) to synthesize minority class samples, ensuring the model identifies "At-Risk" employees without bias.
+* **Feature Optimization:** Reduced 33 raw variables to **16 refined features**, ultimately isolating the **Top 10 drivers** of turnover.
+* **Algorithm Selection:** Benchmarked Logistic Regression and XGBoost; **Random Forest** was selected for its superior ability to capture non-linear relationships in HR data.
 
 ---
 
-## Business Impact
-The model's top features provide actionable insights for improving employee retention. The following are the most significant drivers of attrition, ranked by their importance to the model:
-
-* **YearsWithCurrManager:** The length of an employee's relationship with their current manager is a critical factor.
-* **Age:** Age is a strong predictor of an employee's likelihood to leave.
-* **NumCompaniesWorked:** The number of past employers is highly correlated with attrition.
-* **YearsAtCompany:** The duration of an employee's tenure is a significant indicator.
-* **EnvironmentSatisfaction:** Job environment plays a crucial role in an employee's decision to stay.
-* **TotalWorkingYears:** Overall career experience is a key factor.
-* **JobSatisfaction:** An employee's satisfaction with their job is a fundamental driver of retention.
-* **MonthlyIncome:** Compensation is a strong predictor of employee turnover.
-* **YearsInCurrentRole:** The time an employee has spent in their current position is a key factor.
-* **DistanceFromHome:** The daily commute distance from an employee's home influences attrition.
-
-**Actionable Recommendations:**
-* **Focus on Managerial Relationships:** Implement training for managers to foster better relationships and support their teams.
-* **Enhance Employee Satisfaction:** Conduct regular surveys to measure and improve job and environment satisfaction.
-* **Review Compensation:** Analyze current salary and benefit structures to ensure competitiveness and reduce turnover driven by financial factors.
+## 📈 Model Performance
+| Metric | Score |
+| :--- | :--- |
+| **ROC-AUC (Cross-Validated)** | **0.972** |
+| **Model Accuracy** | 0.80 |
+| **Precision** | 0.26 |
+| **Recall** | 0.15 |
 
 ---
 
-## Tech Stack
+## 💡 Top 10 Attrition Drivers
+The model identified the following features as the most critical predictors of employee turnover:
+1. **YearsWithCurrManager** (Managerial Relationship)
+2. **Age** (Demographic Trends)
+3. **NumCompaniesWorked** (Career Stability)
+4. **YearsAtCompany** (Tenure)
+5. **EnvironmentSatisfaction** (Work Culture)
+6. **TotalWorkingYears** (Experience)
+7. **JobSatisfaction** (Role Alignment)
+8. **MonthlyIncome** (Compensation)
+9. **YearsInCurrentRole** (Promotion Cycles)
+10. **DistanceFromHome** (Commute Impact)
+
+
+---
+
+## 🛡️ License
+
+**Copyright © 2025 Nandhana.** All rights reserved.  
+
+Proprietary work. Unauthorized copying or distribution is prohibited. Inquiries: nandhanaprabhar231@gmail.com
+
+---
+
+## ⚙️ Technical Setup
+
+### Prerequisites
 * **Python 3.x**
-* **Pandas, NumPy**
-* **Scikit-learn**
-* **Google Colab**
+* **Libraries:** `pandas`, `numpy`, `scikit-learn`, `imblearn`, `matplotlib`, `seaborn`
+
+### Installation & Usage
+```bash
+# Clone the repository
+git clone [https://github.com/nandhana-dev/employee-attrition.git](https://github.com/nandhana-dev/employee-attrition.git)
+cd employee-attrition
+
+# Install Dependencies
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn
+```
+
+
+## Running the Analysis 
+1. Open the .ipynb file in Google Colab or Jupyter Notebook.
+
+2. Ensure the dataset (Employee-Attrition.csv) is located in the root directory.
